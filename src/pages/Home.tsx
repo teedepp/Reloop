@@ -1,30 +1,34 @@
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import ReloopLogo from '../assets/Reloop.svg';
 
 const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <div className="absolute left-0 top-0 p-6 z-10">
+        <img src={ReloopLogo} alt="Reloop Logo" className="h-10 w-auto" />
+      </div>
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-primary-50 to-secondary-50 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Basique', fontWeight: 900 }}>
                 Give Your Purchases a Second Life
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8" style={{ fontFamily: 'Poppins', fontWeight: 400 }}>
                 Track, reuse, and resell your purchases to reduce waste and make a positive impact on the environment.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   to="/dashboard"
-                  className="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
+                  className="px-6 py-3 bg-lime-700 text-white font-medium rounded-lg hover:bg-lime-800 hover:text-white transition-colors"
                 >
                   Connect Walmart Account
                 </Link>
                 <Link
                   to="/dashboard"
-                  className="px-6 py-3 bg-white text-primary-600 font-medium rounded-lg border border-primary-600 hover:bg-primary-50 transition-colors"
+                  className="px-6 py-3 bg-white text-lime-700 font-medium rounded-lg border border-lime-700 hover:bg-lime-50 transition-colors"
                 >
                   Try Demo
                 </Link>

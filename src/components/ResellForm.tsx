@@ -74,7 +74,7 @@ const ResellForm = ({ product, onSubmit, onClose }: ResellFormProps) => {
               id="condition"
               value={condition}
               onChange={(e) => setCondition(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
             >
               <option value="Like New">Like New</option>
               <option value="Very Good">Very Good</option>
@@ -94,7 +94,7 @@ const ResellForm = ({ product, onSubmit, onClose }: ResellFormProps) => {
               step="0.01"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
               required
             />
           </div>
@@ -109,7 +109,7 @@ const ResellForm = ({ product, onSubmit, onClose }: ResellFormProps) => {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
+              className="px-4 py-2 bg-lime-700 text-white rounded-lg hover:bg-lime-800"
             >
               List for Resale
             </button>

@@ -49,10 +49,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="w-full h-full px-6 py-4 max-w-screen-2xl mx-auto">
+    <div className="w-full h-full px-6 py-4">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold text-gray-900">📦 Your Dashboard</h1>
-        <button className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition">
+        <button className="bg-lime-700 text-white px-4 py-2 rounded-lg hover:bg-lime-800 transition">
           + Add Product
         </button>
       </div>

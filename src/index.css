@@ -1,15 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL,GRAD,opsz,wght@0,0,24,400');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom styles */
+
+@font-face {
+  font-family: 'Basique';
+  src: url('/fonts/Basique-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Basique';
+  src: url('/fonts/Basique-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Basique';
+  src: url('/fonts/Basique-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 @layer base {
   :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --lime-50:  #f7fee7;
+    --lime-100: #ecfccb;
+    --lime-200: #d9f99d;
+    --lime-300: #bef264;
+    --lime-400: #a3e635;
+    --lime-500: #84cc16;
+    --lime-600: #65a30d;
+    --lime-700: #4d7c0f;
+    --lime-800: #3f6212;
+    --lime-900: #365314;
   }
 }
 
@@ -22,25 +51,43 @@
 /* Regular CSS below */
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #32CD32;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+  color: #2CA62C ;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Ensure the root div takes full width */
+#root {
+  width: 100%;
   min-height: 100vh;
 }
 
 h1 {
+  font-family: 'Basique', sans-serif;
+  font-weight: 900;
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-family: 'Basique', sans-serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'Basique', sans-serif;
+  font-weight: 400;
 }
 
 button {
@@ -54,7 +101,7 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #2CA62C;
 }
 
 button:focus,
@@ -64,12 +111,12 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #244721;
     background-color: #ffffff;
   }
   
   a:hover {
-    color: #747bff;
+    color: #2BBF2B;
   }
   
   button {

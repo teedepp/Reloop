@@ -23,7 +23,7 @@ const ProductCard = ({ product, onRemind, onResell, onRecycleInfo }: ProductCard
 
   return (
     // Only highlight: change border, shadows, and hover transition
-    <div className="rounded-xl bg-white shadow-md border border-gray-200 hover:ring-2 hover:ring-primary-200 transition">
+    <div className="rounded-xl bg-white shadow-md border border-gray-200 hover:ring-2 hover:ring-lime-200 transition">
       <div className="flex flex-col md:flex">
         <div className="md:flex-shrink-0">
           <img 
@@ -59,13 +59,13 @@ const ProductCard = ({ product, onRemind, onResell, onRecycleInfo }: ProductCard
           <div className="flex space-x-2 mt-4">
             <button 
               onClick={() => onRemind(product.id)}
-              className="px-3 py-1.5 bg-primary-50 text-primary-600 rounded-lg text-sm font-medium hover:bg-primary-100 transition-colors"
+              className="px-3 py-1.5 bg-lime-50 text-lime-700 rounded-lg text-sm font-medium hover:bg-lime-100 transition-colors"
             >
               Remind Me
             </button>
             <button 
               onClick={() => onResell(product.id)}
-              className="px-3 py-1.5 bg-secondary-50 text-secondary-600 rounded-lg text-sm font-medium hover:bg-secondary-100 transition-colors"
+              className="px-3 py-1.5 bg-lime-100 text-lime-800 rounded-lg text-sm font-medium hover:bg-lime-200 transition-colors"
             >
               Resell
             </button>
@@ -86,7 +86,7 @@ const ProductCard = ({ product, onRemind, onResell, onRecycleInfo }: ProductCard
           
           <button 
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-4 text-primary-500 text-sm hover:underline focus:outline-none"
+            className="mt-4 text-sm px-4 py-2 bg-lime-700 text-white rounded-lg hover:bg-white hover:text-lime-700 border border-lime-700 focus:outline-none transition-colors"
           >
             {isExpanded ? 'Show Less' : 'Show More'}
           </button>
