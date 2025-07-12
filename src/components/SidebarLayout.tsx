@@ -23,7 +23,7 @@ const SidebarLayout = ({ children }: Props) => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <aside className={`${isCollapsed ? 'w-16' : 'w-64'} bg-white shadow-md flex flex-col pt-8 px-4 transition-all duration-300 ease-in-out relative`}>
+      <aside className={`${isCollapsed ? 'w-16' : 'w-64'} bg-white shadow-md flex flex-col pt-8 px-4 transition-all duration-300 ease-in-out fixed top-0 left-0 h-screen z-30`} style={{height: '100vh'}}>
         {/* User Info and Toggle Button */}
         <div className="flex items-center mb-10 relative">
           <img
@@ -83,26 +83,23 @@ const SidebarLayout = ({ children }: Props) => {
           </Link>
         </nav>
 
-        {/* Eco Points */}
-        {!isCollapsed && (
-          <div className="mt-auto px-4 pt-6">
-            <div className="text-sm text-gray-500">Eco Points</div>
-            <div className="text-lg font-semibold text-green-600">{user.ecoPoints} 🪙</div>
-          </div>
-        )}
-        
-        {/* Collapsed Eco Points */}
-        {isCollapsed && (
-          <div className="mt-auto flex flex-col items-center pt-6" title={`${user.ecoPoints} Eco Points`}>
-            <div className="text-lg">🪙</div>
-            <div className="text-xs font-semibold text-green-600">{user.ecoPoints}</div>
-          </div>
-        )}
+        {/* Switch User Button */}
+        <div className={`mt-auto ${isCollapsed ? 'flex flex-col items-center pt-6' : 'px-4 pt-6'}`} style={{ paddingBottom: 20 }}>
+          <button
+            className={`flex items-center w-full bg-white text-lime-700 border border-lime-700 hover:bg-lime-50 rounded-lg transition-colors font-semibold ${isCollapsed ? 'justify-center p-2' : 'px-3 py-2'}`}
+            style={{ fontSize: isCollapsed ? '1.5rem' : '1rem' }}
+          >
+            <span className="material-symbols-outlined" style={{ fontVariationSettings: 'FILL 1, wght 400, GRAD 0, opsz 24', fontSize: isCollapsed ? '1.25rem' : '1.5rem', marginRight: isCollapsed ? 0 : 8, color: '#4d7c0f' }}>change_circle</span>
+            {!isCollapsed && <span className="ml-2">Switch User</span>}
+          </button>
+        </div>
       </aside>
 
       {/* Main content + topbar */}
-      <main className="flex-1 flex flex-col overflow-hidden">
-        <Navbar />
+      <main className="flex-1 flex flex-col overflow-hidden ml-16 md:ml-64" style={{marginLeft: isCollapsed ? '4rem' : '16rem'}}>
+        <div className="sticky top-0 z-40 bg-white shadow-sm">
+          <Navbar />
+        </div>
         <div className="flex-1 overflow-auto">{children}</div>
       </main>
     </div>
