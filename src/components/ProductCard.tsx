@@ -5,6 +5,9 @@ import almondMilkImg from '../assets/almond_milk.png';
 import dishSoapImg from '../assets/dish_soap.png';
 import spinachImg from '../assets/spinach.png';
 import yogurtImg from '../assets/yogurt.png';
+import waterBottleImg from '../assets/waterbottle.png';
+import reactImg from '../assets/react.svg';
+import reloopImg from '../assets/Reloop.svg';
 
 interface ProductCardProps {
   product: Product;
@@ -26,11 +29,16 @@ const ProductCard = ({ product, onRemind, onResell, onRecycleInfo }: ProductCard
   };
 
   // Map product names to asset images
+
+  // Map product names to asset images
   const productImages: Record<string, string> = {
-    'Almond Milk': almondMilkImg,
-    'Dish Soap': dishSoapImg,
-    'Spinach': spinachImg,
-    'Yogurt': yogurtImg,
+    'Organic Almond Milk': almondMilkImg,
+    'Eco-Friendly Dish Soap': dishSoapImg,
+    'Organic Spinach': spinachImg,
+    'Organic Yogurt': yogurtImg,
+    'Reusable Water Bottle': waterBottleImg,
+    'React': reactImg,
+    'Reloop': reloopImg,
     // Add more mappings as needed
   };
 
