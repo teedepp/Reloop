@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import useStore from '../store'
 import Navbar from './Navbar'
-import ReloopLogo from '../assets/Reloop.svg'
 
 type Props = {
   children: ReactNode
