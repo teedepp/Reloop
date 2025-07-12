@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import type { Product } from '../types';
 import { formatDate, getDaysRemaining, getExpiryProgress } from '../utils/dateUtils';
+import almondMilkImg from '../assets/almond_milk.png';
+import dishSoapImg from '../assets/dish_soap.png';
+import spinachImg from '../assets/spinach.png';
+import yogurtImg from '../assets/yogurt.png';
 
 interface ProductCardProps {
   product: Product;
@@ -21,6 +25,17 @@ const ProductCard = ({ product, onRemind, onResell, onRecycleInfo }: ProductCard
     return 'bg-red-500';
   };
 
+  // Map product names to asset images
+  const productImages: Record<string, string> = {
+    'Almond Milk': almondMilkImg,
+    'Dish Soap': dishSoapImg,
+    'Spinach': spinachImg,
+    'Yogurt': yogurtImg,
+    // Add more mappings as needed
+  };
+
+  const imageSrc = productImages[product.name] || product.imageUrl;
+
   return (
     // Only highlight: change border, shadows, and hover transition
     <div className="rounded-xl bg-white shadow-md border border-gray-200 hover:ring-2 hover:ring-lime-200 transition">
@@ -28,7 +43,7 @@ const ProductCard = ({ product, onRemind, onResell, onRecycleInfo }: ProductCard
         <div className="md:flex-shrink-0">
           <img 
             className="h-48 w-full md:w-48 object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none" 
-            src={product.imageUrl} 
+            src={imageSrc} 
             alt={product.name} 
           />
         </div>

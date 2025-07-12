@@ -1,3 +1,4 @@
+import ReloopLogo from '../assets/Reloop.svg'
 import useStore from '../store'
 
 const Navbar = () => {
@@ -5,8 +6,8 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-sm h-16 flex items-center justify-between px-6">
-      <div className="text-xl text-lime-700 font-bold" style={{ fontFamily: 'Basique, sans-serif' }}>
-        Welcome Back 👋
+      <div className="flex items-center">
+        <img src={ReloopLogo} alt="Reloop Logo" className="h-10 w-auto" />
       </div>
 
       <div className="flex items-center space-x-4">

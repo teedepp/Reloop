@@ -51,7 +51,7 @@ const Dashboard = () => {
   return (
     <div className="w-full h-full px-6 py-4">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">📦 Your Dashboard</h1>
+        <h1 className="text-3xl font-bold text-gray-900">Your Dashboard</h1>
         <button className="bg-lime-700 text-white px-4 py-2 rounded-lg hover:bg-lime-800 transition">
           + Add Product
         </button>
@@ -60,7 +60,7 @@ const Dashboard = () => {
       {/* Reminders */}
       {unreadReminders.length > 0 && (
         <div className="mb-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">🔔 Reminders</h2>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Reminders</h2>
           <div className="space-y-4">
             {unreadReminders.map(r => (
               <ReminderAlert key={r.id} reminder={r} onDismiss={handleDismissReminder} />
@@ -70,7 +70,7 @@ const Dashboard = () => {
       )}
 
       {/* Product Cards */}
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">🛍️ Your Products</h2>
+      <h2 className="text-xl font-semibold text-gray-800 mb-4">Your Products</h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
         {products.map(product => (
           <ProductCard

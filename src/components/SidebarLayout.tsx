@@ -24,15 +24,25 @@ const SidebarLayout = ({ children }: Props) => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <aside className={`${isCollapsed ? 'w-16' : 'w-64'} bg-white shadow-md flex flex-col py-8 px-4 transition-all duration-300 ease-in-out`}>
-        {/* Logo and Toggle Button */}
-        <div className="flex items-center justify-between mb-10">
-          <Link to="/" className={`flex items-center text-2xl font-bold text-lime-700 ${isCollapsed ? 'justify-center' : 'px-2'}`}>
-            {isCollapsed ? <img src={ReloopLogo} alt="Reloop Logo" style={{ height: 32, width: 'auto' }} /> : <><img src={ReloopLogo} alt="Reloop Logo" style={{ height: 32, width: 'auto', marginRight: 8 }} /> <span className="sr-only">Reloop</span></>}
-          </Link>
+      <aside className={`${isCollapsed ? 'w-16' : 'w-64'} bg-white shadow-md flex flex-col pt-8 px-4 transition-all duration-300 ease-in-out relative`}>
+        {/* User Info and Toggle Button */}
+        <div className="flex items-center mb-10 relative">
+          <img
+            src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${user.name}`}
+            alt="avatar"
+            className={`rounded-full border mr-3 transition-all duration-300 ${isCollapsed ? 'h-8 w-8' : 'h-12 w-12'}`}
+          />
+          {!isCollapsed && (
+            <div>
+              <div className="text-lg font-bold text-lime-700">{user.name}</div>
+              <div className="text-sm text-gray-500">{user.email}</div>
+            </div>
+          )}
           <button
             onClick={toggleSidebar}
-            className="p-1 rounded-lg bg-lime-700 text-white hover:bg-white hover:text-lime-700 border border-lime-700 transition-colors"
+            className="absolute opacity-50 p-0.5 rounded-lg bg-lime-700 text-white hover:bg-white hover:text-lime-700 border border-lime-700 shadow transition-all duration-300 z-20 h-6 w-5 flex items-center justify-center"
+            style={{ minWidth: 0, top: 'calc(105% + 4px)', right: '-26px' }}
+            aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           >
             {isCollapsed ? '→' : '←'}
           </button>
@@ -45,7 +55,7 @@ const SidebarLayout = ({ children }: Props) => {
             className={`rounded-lg ${isCollapsed ? 'px-0 justify-center' : 'px-4'} py-2 font-medium text-left flex items-center ${isActive('/dashboard')}`}
             title={isCollapsed ? 'Dashboard' : ''}
           >
-            <span className="text-lg">🏠</span>
+            <span className="material-symbols-outlined text-2xl font-bold" style={{ fontVariationSettings: 'wght 700' }}>home</span>
             {!isCollapsed && <span className="ml-2">Dashboard</span>}
           </Link>
           <Link 
@@ -53,7 +63,7 @@ const SidebarLayout = ({ children }: Props) => {
             className={`rounded-lg ${isCollapsed ? 'px-0 justify-center' : 'px-4'} py-2 font-medium text-left flex items-center ${isActive('/resell')}`}
             title={isCollapsed ? 'Resell' : ''}
           >
-            <span className="text-lg">🔁</span>
+            <span className="material-symbols-outlined text-2xl font-bold" style={{ fontVariationSettings: 'wght 700' }}>store</span>
             {!isCollapsed && <span className="ml-2">Resell</span>}
           </Link>
           <Link 
@@ -61,7 +71,7 @@ const SidebarLayout = ({ children }: Props) => {
             className={`rounded-lg ${isCollapsed ? 'px-0 justify-center' : 'px-4'} py-2 font-medium text-left flex items-center ${isActive('/analytics')}`}
             title={isCollapsed ? 'Analytics' : ''}
           >
-            <span className="text-lg">📊</span>
+            <span className="material-symbols-outlined text-2xl font-bold" style={{ fontVariationSettings: 'wght 700' }}>analytics</span>
             {!isCollapsed && <span className="ml-2">Analytics</span>}
           </Link>
           <Link 
@@ -69,7 +79,7 @@ const SidebarLayout = ({ children }: Props) => {
             className={`rounded-lg ${isCollapsed ? 'px-0 justify-center' : 'px-4'} py-2 font-medium text-left flex items-center ${isActive('/profile')}`}
             title={isCollapsed ? 'Profile' : ''}
           >
-            <span className="text-lg">👤</span>
+            <span className="material-symbols-outlined text-2xl font-bold" style={{ fontVariationSettings: 'wght 700' }}>person</span>
             {!isCollapsed && <span className="ml-2">Profile</span>}
           </Link>
         </nav>
